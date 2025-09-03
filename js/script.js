@@ -70,10 +70,12 @@ function main() {
       trabajoSeleccionado.forEach((obra, index) => {
         console.log(`${index + 1}. ${obra.estilo} - $${obra.precio}`);
       });
-      let total = trabajoSeleccionado.reduce(
-        (acc, obra) => acc + obra.precio,
-        0
-      );
+      let total = 0;
+
+      for (let i = 0; i < trabajoSeleccionado.length; i++) {
+        total += trabajoSeleccionado[i].precio;
+      }
+
       console.log(`Total a pagar: $${total}`);
       console.log("Gracias por visitar mi página de comisiones.");
     } else {
